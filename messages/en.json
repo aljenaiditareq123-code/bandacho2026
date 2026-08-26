@@ -1,0 +1,308 @@
+{
+  "locale": "English",
+  "meta": {
+    "title": "BandaChao — Smart Import Platform (1688 → UAE/KSA)",
+    "description": "BandaChao FZ-LLC (RAKEZ UAE). Licensed import portal with 7-stage transparent order tracking, multi-currency pricing, and admin dashboard.",
+    "keywords": "1688 import, UAE e-commerce, smart sourcing, China to UAE, order tracking"
+  },
+  "nav": {
+    "brand": "BandaChao",
+    "home": "Home",
+    "calculator": "Pricing Calculator",
+    "track": "Track Order",
+    "products": "Catalog",
+    "docs": "Documentation",
+    "dashboard": "Admin Dashboard",
+    "login": "Admin Login",
+    "logout": "Logout",
+    "switchLang": "Language"
+  },
+  "footer": {
+    "tagline": "Licensed E-Commerce Import Portal — RAKEZ Free Zone, UAE",
+    "legalName": "BandaChao FZ-LLC",
+    "trn": "TRN: 105281937000001",
+    "licenses": "Commercial Broker · E-Commerce Portal · Media License",
+    "columns": {
+      "platform": "Platform",
+      "resources": "Resources",
+      "company": "Company"
+    },
+    "rights": "All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "RAKEZ UAE · Licensed · TRN 105281937000001",
+      "titleLine1": "The Smart Way To",
+      "titleLine2": "Import From 1688",
+      "subtitle": "BandaChao is a licensed cross-border import portal that connects Gulf buyers to trusted Chinese suppliers — with 7-stage order tracking, multi-currency pricing, and zero hidden fees.",
+      "ctaPrimary": "Try Pricing Calculator",
+      "ctaSecondary": "Track Your Order",
+      "previewLabel": "Live Order",
+      "previewOrderId": "AE123456789",
+      "previewStage": "APPROVED · In Procurement",
+      "previewValue": "AED 120.00"
+    },
+    "benefits": {
+      "title": "Why BandaChao",
+      "subtitle": "Three guarantees built into every shipment.",
+      "items": [
+        {
+          "title": "Transparent 7-Stage Milestones",
+          "description": "Every order moves through 7 publicly-trackable stages — from approval, through inspection, to delivery. Never lose visibility of your goods.",
+          "icon": "timeline"
+        },
+        {
+          "title": "Multi-Currency Engine",
+          "description": "Source in RMB, pay in AED / USD / SAR — with transparent shipping, insurance, and the documented 10% platform split.",
+          "icon": "calculator"
+        },
+        {
+          "title": "Licensed & Compliant",
+          "description": "Fully registered in RAKEZ with three active trade licenses (Commercial Broker, E-Commerce Portal, Media), TRN, and valid lease.",
+          "icon": "shield"
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Three simple steps from source to doorstep.",
+      "steps": [
+        {
+          "title": "1. Source & Quote",
+          "description": "Pick products from 1688 or upload your list. Get an instant multi-currency quote with transparent fees in the calculator."
+        },
+        {
+          "title": "2. 7-Stage Tracked Procurement",
+          "description": "We source, inspect, package, and ship your goods — each step is timestamped and documented with evidence in your tracking page."
+        },
+        {
+          "title": "3. Delivered to UAE / KSA",
+          "description": "Final delivery to your door. Escrowed funds release only after delivery confirmation scan."
+        }
+      ]
+    },
+    "teaser": {
+      "title": "See your final price — instantly",
+      "subtitle": "Enter a supplier price from 1688 in RMB and see the all-in delivered cost in 3 currencies.",
+      "label": "Supplier price (RMB)",
+      "placeholder": "e.g. 1500",
+      "resultLabel": "Estimated delivered in AED",
+      "cta": "Open Full Calculator →"
+    }
+  },
+  "calculator": {
+    "title": "Import Pricing Calculator",
+    "subtitle": "All-in landed cost calculator. Source in RMB, pay in AED / USD / SAR.",
+    "form": {
+      "supplierPrice": "Supplier Price (RMB)",
+      "supplierPriceHint": "The ex-factory price you see on 1688 / from your supplier.",
+      "quantity": "Quantity",
+      "weightKg": "Estimated Weight (kg)",
+      "weightKgHint": "Used to calculate air freight at the standard rate below.",
+      "shippingRateKgRMB": "Air Freight Rate (RMB/kg)",
+      "shippingRateKgRMBHint": "Default 28 RMB/kg — adjust if you have a dedicated quote.",
+      "insurance": "Add Cargo Insurance (1.5%)",
+      "insuranceHint": "Recommended for fragile / high value goods."
+    },
+    "totals": {
+      "aed": "United Arab Emirates",
+      "usd": "United States",
+      "sar": "Saudi Arabia",
+      "fx": "FX rates (demo): 1 CNY = 0.51 AED, 1 AED = 0.2723 USD, 1 AED = 1.0209 SAR"
+    },
+    "breakdown": {
+      "title": "Full Breakdown & 10% Platform Split",
+      "rows": {
+        "supplier": "Supplier Cost (Ex-Factory)",
+        "shipping": "International Shipping",
+        "insurance": "Cargo Insurance",
+        "subtotal": "Subtotal (before platform fee)",
+        "platform": "Platform Fee (10%)",
+        "ownerNet": "  · Owner Net (5.5%)",
+        "silkRoad": "  · Silk Road Fund (1.5%)",
+        "dev": "  · Development Fund (1.5%)",
+        "legal": "  · Legal & Tax Fund (1.5%)",
+        "total": "ALL-IN DELIVERED TOTAL"
+      }
+    }
+  },
+  "login": {
+    "title": "Admin Login",
+    "subtitle": "Founder / Operator access — enter your credentials.",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign In",
+    "demoBoxTitle": "Demo Credentials",
+    "demoBoxBody": "Use these to preview the admin dashboard:",
+    "demoEmail": "founder@bandachao.com",
+    "demoPassword": "demo123",
+    "errors": {
+      "invalid": "Invalid email or password.",
+      "generic": "Login failed. Please try again."
+    },
+    "backHome": "← Back to home"
+  },
+  "dashboard": {
+    "title": "Admin Dashboard",
+    "welcome": "Welcome back",
+    "kpis": {
+      "totalOrders": "Total Orders",
+      "activeOrders": "Active Orders",
+      "revenue": "Revenue (AED)",
+      "commissions": "Commissions Earned"
+    },
+    "orders": {
+      "title": "All Orders",
+      "cols": {
+        "tracking": "Tracking #",
+        "customer": "Customer",
+        "product": "Product",
+        "amount": "Amount",
+        "stage": "Stage",
+        "payment": "Payment",
+        "date": "Order Date",
+        "stages": "Milestones",
+        "actions": "Actions"
+      },
+      "view": "View"
+    },
+    "stagesTooltip": "7 milestone stages — completed: green, active: amber, pending: gray."
+  },
+  "track": {
+    "landingTitle": "Track Your Order",
+    "landingSubtitle": "Enter your tracking number to see the full 7-stage timeline with evidence.",
+    "placeholder": "e.g. AE123456789",
+    "search": "Search",
+    "sampleHint": "Try the seeded demo order:",
+    "notFound": "Order not found. Please check the tracking number.",
+    "error": "Could not load this order right now.",
+    "summary": {
+      "title": "Order Summary",
+      "product": "Product",
+      "category": "Category",
+      "customer": "Customer",
+      "date": "Order Date",
+      "amount": "Total Amount",
+      "tracking": "Tracking #",
+      "currentStage": "Current Stage"
+    },
+    "milestones": {
+      "title": "Order Milestones",
+      "evidence": "Required evidence",
+      "completedAt": "Completed",
+      "stages": {
+        "PENDING": "Pending Review",
+        "APPROVED": "Approved",
+        "PROCURED": "Procured from Supplier",
+        "INSPECTED": "Quality Inspected",
+        "PACKAGED": "Packaged for Export",
+        "SHIPPED": "Shipped to UAE/KSA",
+        "DELIVERED": "Delivered"
+      }
+    },
+    "badge": {
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "pending": "Pending"
+    }
+  },
+  "products": {
+    "title": "Product Catalog",
+    "subtitle": "Featured products available for import. Live data from the BandaChao database.",
+    "filters": {
+      "category": "Category",
+      "all": "All Categories",
+      "cars": "Auto Parts",
+      "premium": "Premium",
+      "trend": "Trending"
+    },
+    "card": {
+      "supplier": "Supplier",
+      "sku": "SKU",
+      "country": "Origin",
+      "viewDetails": "View Details →"
+    },
+    "empty": "No products match your filters."
+  },
+  "docs": {
+    "title": "Documentation & How-To",
+    "subtitle": "Everything you need to get the most out of BandaChao.",
+    "sections": {
+      "placing": {
+        "kicker": "Guide 01",
+        "title": "How to Place an Order",
+        "steps": [
+          "Browse the catalog or provide your 1688 product links via the quote request form.",
+          "Use the Pricing Calculator to review the all-in cost across AED, USD, and SAR, including the transparent 10% platform split.",
+          "Confirm your order and make the escrow payment. Your funds are held securely until delivery.",
+          "Receive your 7-stage tracking link and follow each milestone — with evidence uploads at inspection, packaging, and shipping.",
+          "Scan the delivery QR at the pickup point. Funds are released to the supplier only after you confirm receipt."
+        ]
+      },
+      "milestones": {
+        "kicker": "Guide 02",
+        "title": "Understanding the 7 Order Milestones",
+        "intro": "Every BandaChao order moves through seven timestamped stages so you always know precisely where your goods are. Here's what each one means:",
+        "stages": [
+          {
+            "name": "PENDING",
+            "desc": "Your order is submitted and being reviewed by the operations team. We verify pricing, stock availability, and supplier score."
+          },
+          {
+            "name": "APPROVED",
+            "desc": "Order is approved — procurement begins. Escrowed funds are locked but not released to the supplier."
+          },
+          {
+            "name": "PROCURED",
+            "desc": "Goods have been purchased from the supplier and received at our consolidation warehouse in China."
+          },
+          {
+            "name": "INSPECTED",
+            "desc": "Independent quality inspection complete. Photos, video, and QC report are attached as evidence."
+          },
+          {
+            "name": "PACKAGED",
+            "desc": "Goods packaged for export — with branded packaging option, moisture protection, and commercial invoice."
+          },
+          {
+            "name": "SHIPPED",
+            "desc": "Goods on board the carrier. Air waybill or express tracking is live in the order page."
+          },
+          {
+            "name": "DELIVERED",
+            "desc": "Goods delivered. Buyer QR scan confirms receipt and triggers fund release to the supplier."
+          }
+        ]
+      },
+      "fees": {
+        "kicker": "Guide 03",
+        "title": "Fees & Commissions — 100% Transparent",
+        "intro": "BandaChao charges a single 10% platform fee on the gross profit of every delivered order. It is split exactly as follows:",
+        "rows": [
+          ["Owner Net", "5.5%", "Operating share for the founder / operator."],
+          ["Silk Road Fund", "1.5%", "Rebates & promotions for repeat buyers."],
+          ["Development Fund", "1.5%", "Engineering, platform maintenance, and AI tooling credits."],
+          ["Legal & Tax Fund", "1.5%", "RAKEZ fees, EmaraTax compliance, and legal counsel."]
+        ],
+        "note": "Shipping, cargo insurance, and supplier cost are all passed through at actuals — BandaChao never marks these up. Use the Pricing Calculator to see a full breakdown for any order before you commit."
+      }
+    }
+  },
+  "common": {
+    "tryDemo": "Try the seeded demo",
+    "or": "or",
+    "loading": "Loading…",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "back": "Back",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "copied": "Copied!",
+    "copy": "Copy",
+    "close": "Close",
+    "search": "Search",
+    "required": "Required",
+    "optional": "Optional"
+  }
+}

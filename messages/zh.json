@@ -1,0 +1,287 @@
+{
+  "locale": "中文",
+  "meta": {
+    "title": "BandaChao 熊猫潮 — 智能跨境进口平台（1688 → 阿联酋/沙特）",
+    "description": "BandaChao FZ-LLC（阿联酋 RAKEZ 自贸区授权企业）。持牌进口门户，提供 7 阶段订单透明追踪、多币种报价和后台管理。",
+    "keywords": "1688 进口, 阿联酋电商, 智能采购, 中国到中东, 订单追踪"
+  },
+  "nav": {
+    "brand": "熊猫潮 BandaChao",
+    "home": "首页",
+    "calculator": "报价计算器",
+    "track": "订单追踪",
+    "products": "产品目录",
+    "docs": "文档中心",
+    "dashboard": "管理后台",
+    "login": "管理员登录",
+    "logout": "退出登录",
+    "switchLang": "语言"
+  },
+  "footer": {
+    "tagline": "阿联酋 RAKEZ 自贸区持牌电商进口门户",
+    "legalName": "BandaChao FZ-LLC",
+    "trn": "税务登记号：105281937000001",
+    "licenses": "商业经纪 · 电商门户 · 媒体许可",
+    "columns": {
+      "platform": "平台",
+      "resources": "资源",
+      "company": "公司"
+    },
+    "rights": "版权所有。"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "阿联酋 RAKEZ · 正规持牌 · TRN 105281937000001",
+      "titleLine1": "从 1688 智能进口，",
+      "titleLine2": "一站式直达中东",
+      "subtitle": "熊猫潮是阿联酋 RAKEZ 自贸区持牌的跨境进口门户，直接对接优质中国供应商——以 7 阶段订单追踪、多币种计价和零隐藏费用，为海湾买家打造放心的进口体验。",
+      "ctaPrimary": "打开报价计算器",
+      "ctaSecondary": "立刻追踪订单",
+      "previewLabel": "实时订单",
+      "previewOrderId": "AE123456789",
+      "previewStage": "已核准 · 采购中",
+      "previewValue": "120.00 AED"
+    },
+    "benefits": {
+      "title": "为什么选择熊猫潮",
+      "subtitle": "每票货物三大保证。",
+      "items": [
+        {
+          "title": "7 阶段透明追踪",
+          "description": "每个订单都有 7 个可公开查看的阶段——从核准、质检到最终交付，全程不丢失您的货物可视化。",
+          "icon": "timeline"
+        },
+        {
+          "title": "多币种报价引擎",
+          "description": "人民币出厂价一键换算成 AED / USD / SAR 落地价，包含运费、保险、以及清晰列明的 10% 平台分成。",
+          "icon": "calculator"
+        },
+        {
+          "title": "正规持牌合规",
+          "description": "阿联酋 RAKEZ 自贸区完全注册，持有三张有效运营牌照（商业经纪、电商门户、媒体许可）、TRN 税号与真实办公租约。",
+          "icon": "shield"
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "运作模式",
+      "subtitle": "从货源到门口只需三步。",
+      "steps": [
+        {
+          "title": "1. 选品 + 报价",
+          "description": "从 1688 选品或上传您的采购清单，使用报价计算器立刻获得多币种全费用落地价。"
+        },
+        {
+          "title": "2. 7 阶段全程采购",
+          "description": "采购、质检、打包、出运——每一步都有时间戳和证据附件上传到您的订单追踪页。"
+        },
+        {
+          "title": "3. 交付阿联酋 / 沙特",
+          "description": "送货上门，仅在买家扫描签收二维码确认收货后，托管资金才会释放给供应商。"
+        }
+      ]
+    },
+    "teaser": {
+      "title": "一键获得最终落地价",
+      "subtitle": "输入 1688 供应商的人民币出厂价，即可看到三种货币的全包落地价。",
+      "label": "供应商出厂价（人民币）",
+      "placeholder": "如：1500",
+      "resultLabel": "预估落地价（AED）",
+      "cta": "打开完整计算器 →"
+    }
+  },
+  "calculator": {
+    "title": "进口报价计算器",
+    "subtitle": "全包落地价计算器。人民币采购，AED / USD / SAR 支付。",
+    "form": {
+      "supplierPrice": "供应商出厂价（元）",
+      "supplierPriceHint": "您在 1688 上看到的出厂价或供应商报价。",
+      "quantity": "采购数量",
+      "weightKg": "预估重量（公斤）",
+      "weightKgHint": "用于按下方标准费率估算空运运费。",
+      "shippingRateKgRMB": "空运费率（元/公斤）",
+      "shippingRateKgRMBHint": "默认 28 元/公斤——如您有专用报价可自行修改。",
+      "insurance": "购买货物保险（1.5%）",
+      "insuranceHint": "推荐用于易碎 / 高价值商品。"
+    },
+    "totals": {
+      "aed": "阿联酋迪拉姆",
+      "usd": "美元",
+      "sar": "沙特里亚尔",
+      "fx": "演示汇率：1 CNY = 0.51 AED；1 AED = 0.2723 USD；1 AED = 1.0209 SAR"
+    },
+    "breakdown": {
+      "title": "费用明细与 10% 平台分成",
+      "rows": {
+        "supplier": "供应商出厂价",
+        "shipping": "国际运费",
+        "insurance": "货物保险",
+        "subtotal": "小计（未加平台费）",
+        "platform": "平台服务费（10%）",
+        "ownerNet": "  · 创始人净收益（5.5%）",
+        "silkRoad": "  · 丝路奖励基金（1.5%）",
+        "dev": "  · 平台研发基金（1.5%）",
+        "legal": "  · 法务税务基金（1.5%）",
+        "total": "全包落地总价"
+      }
+    }
+  },
+  "login": {
+    "title": "管理员登录",
+    "subtitle": "创始人 / 运营人员账号入口。",
+    "email": "邮箱",
+    "password": "密码",
+    "submit": "登录",
+    "demoBoxTitle": "演示账号",
+    "demoBoxBody": "请使用以下凭据查看演示后台：",
+    "demoEmail": "founder@bandachao.com",
+    "demoPassword": "demo123",
+    "errors": {
+      "invalid": "邮箱或密码错误。",
+      "generic": "登录失败，请重试。"
+    },
+    "backHome": "← 返回首页"
+  },
+  "dashboard": {
+    "title": "管理后台",
+    "welcome": "欢迎回来",
+    "kpis": {
+      "totalOrders": "订单总数",
+      "activeOrders": "活跃订单",
+      "revenue": "营收（AED）",
+      "commissions": "已赚佣金"
+    },
+    "orders": {
+      "title": "订单列表",
+      "cols": {
+        "tracking": "追踪号",
+        "customer": "客户",
+        "product": "产品",
+        "amount": "金额",
+        "stage": "当前阶段",
+        "payment": "付款状态",
+        "date": "下单日期",
+        "stages": "7 阶段",
+        "actions": "操作"
+      },
+      "view": "查看"
+    },
+    "stagesTooltip": "7 个阶段：绿色=已完成，琥珀色=进行中，灰色=待处理"
+  },
+  "track": {
+    "landingTitle": "追踪您的订单",
+    "landingSubtitle": "输入追踪号即可查看完整的 7 阶段时间线与附件证据。",
+    "placeholder": "例如：AE123456789",
+    "search": "查询",
+    "sampleHint": "试试演示订单：",
+    "notFound": "未找到该订单，请核对追踪号。",
+    "error": "暂时无法加载该订单，请稍后重试。",
+    "summary": {
+      "title": "订单概况",
+      "product": "商品",
+      "category": "类目",
+      "customer": "客户",
+      "date": "下单日期",
+      "amount": "订单总额",
+      "tracking": "追踪号",
+      "currentStage": "当前阶段"
+    },
+    "milestones": {
+      "title": "订单里程碑",
+      "evidence": "要求的证据类型",
+      "completedAt": "完成时间",
+      "stages": {
+        "PENDING": "待审核",
+        "APPROVED": "已核准",
+        "PROCURED": "已完成采购",
+        "INSPECTED": "质检完成",
+        "PACKAGED": "已打包待出运",
+        "SHIPPED": "已发往阿联酋 / 沙特",
+        "DELIVERED": "已签收"
+      }
+    },
+    "badge": {
+      "completed": "已完成",
+      "inProgress": "进行中",
+      "pending": "待处理"
+    }
+  },
+  "products": {
+    "title": "产品目录",
+    "subtitle": "精选可进口产品，数据直接来自熊猫潮数据库。",
+    "filters": {
+      "category": "分类",
+      "all": "全部分类",
+      "cars": "汽车配件",
+      "premium": "高端优选",
+      "trend": "热销"
+    },
+    "card": {
+      "supplier": "供应商",
+      "sku": "SKU 编号",
+      "country": "原产地",
+      "viewDetails": "查看详情 →"
+    },
+    "empty": "没有符合筛选条件的产品。"
+  },
+  "docs": {
+    "title": "文档与指南",
+    "subtitle": "帮助您充分使用熊猫潮的全部内容。",
+    "sections": {
+      "placing": {
+        "kicker": "指南一",
+        "title": "如何下单",
+        "steps": [
+          "从产品目录选品，或通过报价请求表单上传您的 1688 产品链接。",
+          "使用报价计算器在 AED / USD / SAR 之间切换查看全包落地价，包括 10% 透明平台分成。",
+          "确认订单并将款项支付至托管账户。在送达前，您的资金将全程安全冻结。",
+          "获得 7 阶段追踪链接，并随时查看每一步证据——包括质检、打包、出运的影像资料。",
+          "到达取货点后扫描签收二维码，买家确认收货后系统才会将托管资金释放给供应商。"
+        ]
+      },
+      "milestones": {
+        "kicker": "指南二",
+        "title": "理解订单 7 阶段里程碑",
+        "intro": "熊猫潮的每一单都依次经过 7 个时间戳阶段，您对货物进度永远一目了然。下面是每个阶段的含义：",
+        "stages": [
+          { "name": "待审核 PENDING", "desc": "订单提交成功，运营团队正在复核——核对价格、库存、供应商评分。" },
+          { "name": "已核准 APPROVED", "desc": "订单通过，开始采购。托管资金锁定但尚未释放给供应商。" },
+          { "name": "已采购 PROCURED", "desc": "已向供应商付款，并送达我方在华集货仓。" },
+          { "name": "质检完成 INSPECTED", "desc": "完成独立质检，并上传照片、视频与质检报告作为证据。" },
+          { "name": "已打包 PACKAGED", "desc": "按出口标准打包——可选品牌包装、防潮防护，并生成商业发票。" },
+          { "name": "已发运 SHIPPED", "desc": "货物已交承运人，空运单或快递单号在订单页中实时查看。" },
+          { "name": "已签收 DELIVERED", "desc": "买家扫码确认签收，触发托管资金释放给供应商。" }
+        ]
+      },
+      "fees": {
+        "kicker": "指南三",
+        "title": "费用与佣金——100% 透明",
+        "intro": "熊猫潮仅在每笔订单交付后，按该订单毛利收取单一的 10% 平台服务费。分成明细如下：",
+        "rows": [
+          ["创始人净收益", "5.5%", "用于平台日常经营与创始人分配。"],
+          ["丝路奖励基金", "1.5%", "用于回购补贴、复购返利和大型促销活动。"],
+          ["平台研发基金", "1.5%", "用于工程师薪资、服务器与 AI 工具订阅。"],
+          ["法务税务基金", "1.5%", "用于 RAKEZ 牌照年费、EmaraTax 合规及专业法律咨询。"]
+        ],
+        "note": "运费、保险、供应商货款全部按实结算，熊猫潮不从中加价。您可以在报价计算器中提前查看任何订单的完整明细后再决定是否下单。"
+      }
+    }
+  },
+  "common": {
+    "tryDemo": "试用演示数据",
+    "or": "或",
+    "loading": "加载中…",
+    "submit": "提交",
+    "cancel": "取消",
+    "back": "返回",
+    "save": "保存",
+    "edit": "编辑",
+    "delete": "删除",
+    "copied": "已复制！",
+    "copy": "复制",
+    "close": "关闭",
+    "search": "搜索",
+    "required": "必填",
+    "optional": "可选"
+  }
+}

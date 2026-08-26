@@ -1,0 +1,360 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ملاحظة: نحول الـ Enums إلى String لأن SQLite لا يدعمها
+// التوثيق هنا، التنفيذ في طبقة التطبيق
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  role      String   @default("CUSTOMER")
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  entrepreneurProfile EntrepreneurProfile?
+  supplierProfile     SupplierProfile?
+  inspectorProfile    InspectorProfile?
+  shipperProfile      ShipperProfile?
+  customerProfile     CustomerProfile?
+
+  sessions  Session[]
+  auditLogs AuditLog[]
+  disputes  Dispute[]  @relation("DisputeOpener")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  refreshToken String   @unique
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model EntrepreneurProfile {
+  id             String    @id @default(cuid())
+  userId         String    @unique
+  bio            String?
+  approved       Boolean   @default(false)
+  approvedAt     DateTime?
+  commissionRate Decimal   @default(0.20)
+  createdAt      DateTime  @default(now())
+
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  products    Product[]
+  orders      Order[]
+  commissions Commission[]
+  payouts     Payout[]
+}
+
+model SupplierProfile {
+  id             String    @id @default(cuid())
+  userId         String    @unique
+  companyName    String
+  country        String    @default("China")
+  taxId          String?
+  verified       Boolean   @default(false)
+  verifiedAt     DateTime?
+  qualityScore   Int       @default(0)
+  onTimeDelivery Decimal   @default(0.0)
+  defectRate     Decimal   @default(0.0)
+  createdAt      DateTime  @default(now())
+
+  user      User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  products  Product[]
+  orders    Order[]
+  invoices  SupplierInvoice[]
+  shipments Shipment[]
+}
+
+model InspectorProfile {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  companyName String
+  country     String
+  certified   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  inspections Inspection[]
+  orders      Order[]      @relation("InspectorOrders")
+}
+
+model ShipperProfile {
+  id                  String   @id @default(cuid())
+  userId              String   @unique
+  companyName         String
+  country             String
+  trackingApiEndpoint String?
+  createdAt           DateTime @default(now())
+
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shipments Shipment[]
+  orders    Order[]    @relation("ShipperOrders")
+}
+
+model CustomerProfile {
+  id                  String   @id @default(cuid())
+  userId              String   @unique
+  shippingAddressJson String
+  createdAt           DateTime @default(now())
+
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orders Order[]
+}
+
+model Product {
+  id String @id @default(cuid())
+
+  titleAr     String
+  titleZh     String?
+  description String
+
+  category    String // السيارات، البريميوم، الترند
+  subcategory String?
+  sku         String? @unique
+  partNumber  String?
+
+  entrepreneurId String
+  supplierId     String
+
+  qualitySignalsJson String
+  approved           Boolean   @default(false)
+  approvedAt         DateTime?
+  approvedBy         String?
+
+  active  Boolean @default(false)
+  deleted Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  entrepreneur EntrepreneurProfile @relation(fields: [entrepreneurId], references: [id])
+  supplier     SupplierProfile     @relation(fields: [supplierId], references: [id])
+  orderItems   OrderItem[]
+  evidences    Evidence[]
+  inspections  Inspection[]
+}
+
+model Order {
+  id String @id @default(cuid())
+
+  customerId     String
+  entrepreneurId String
+  supplierId     String
+  inspectorId    String?
+  shipperId      String?
+
+  totalAmount Decimal
+  currency    String  @default("AED")
+
+  paymentStatus String @default("PENDING")
+  currentStage  String @default("PENDING")
+
+  trackingNumber    String?
+  estimatedDelivery DateTime?
+
+  returnRequested Boolean @default(false)
+  returnStatus    String?
+  returnReason    String?
+
+  notes String?
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  completedAt DateTime?
+
+  customer      CustomerProfile      @relation(fields: [customerId], references: [id])
+  entrepreneur  EntrepreneurProfile  @relation(fields: [entrepreneurId], references: [id])
+  supplier      SupplierProfile      @relation(fields: [supplierId], references: [id])
+  inspector     InspectorProfile?    @relation("InspectorOrders", fields: [inspectorId], references: [id])
+  shipper       ShipperProfile?      @relation("ShipperOrders", fields: [shipperId], references: [id])
+  items         OrderItem[]
+  evidences     Evidence[]
+  milestones    OrderMilestone[]
+  paymentLedger PaymentLedgerEntry[]
+  commissions   Commission[]
+  invoices      SupplierInvoice[]
+  inspections   Inspection[]
+  shipments     Shipment[]
+  disputes      Dispute[]
+  auditLogs     AuditLog[]
+}
+
+model OrderItem {
+  id         String  @id @default(cuid())
+  orderId    String
+  productId  String
+  quantity   Int     @default(1)
+  unitPrice  Decimal
+  totalPrice Decimal
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+}
+
+model OrderMilestone {
+  id                    String    @id @default(cuid())
+  orderId               String
+  stage                 String
+  isCompleted           Boolean   @default(false)
+  completedAt           DateTime?
+  requiredEvidenceTypes String
+  notes                 String?
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@unique([orderId, stage])
+}
+
+model Evidence {
+  id                String    @id @default(cuid())
+  orderId           String?
+  productId         String?
+  stage             String?
+  type              String
+  status            String    @default("PENDING")
+  filePath          String
+  extractedDataJson String?
+  verifiedAt        DateTime?
+  verifiedByUserId  String?
+  notes             String?
+  createdAt         DateTime  @default(now())
+
+  order   Order?   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product? @relation(fields: [productId], references: [id])
+}
+
+model PaymentLedgerEntry {
+  id          String    @id @default(cuid())
+  orderId     String
+  amount      Decimal
+  currency    String    @default("AED")
+  status      String    @default("PENDING")
+  payeeUserId String
+  payeeRole   String
+  milestoneId String?
+  releasedAt  DateTime?
+  notes       String?
+  createdAt   DateTime  @default(now())
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model Commission {
+  id             String    @id @default(cuid())
+  orderId        String
+  entrepreneurId String
+  amount         Decimal
+  percentage     Decimal
+  paid           Boolean   @default(false)
+  paidAt         DateTime?
+  payoutId       String?
+  createdAt      DateTime  @default(now())
+
+  order        Order               @relation(fields: [orderId], references: [id])
+  entrepreneur EntrepreneurProfile @relation(fields: [entrepreneurId], references: [id])
+  payout       Payout?             @relation(fields: [payoutId], references: [id])
+}
+
+model Payout {
+  id             String    @id @default(cuid())
+  entrepreneurId String
+  amount         Decimal
+  currency       String    @default("AED")
+  status         String    @default("PENDING")
+  processedAt    DateTime?
+  notes          String?
+  createdAt      DateTime  @default(now())
+
+  entrepreneur EntrepreneurProfile @relation(fields: [entrepreneurId], references: [id])
+  commissions  Commission[]
+}
+
+model SupplierInvoice {
+  id                String   @id @default(cuid())
+  orderId           String
+  supplierId        String
+  amount            Decimal
+  currency          String   @default("CNY")
+  taxAmount         Decimal  @default(0)
+  totalAmount       Decimal
+  filePath          String
+  extractedDataJson String?
+  createdAt         DateTime @default(now())
+
+  order    Order           @relation(fields: [orderId], references: [id])
+  supplier SupplierProfile @relation(fields: [supplierId], references: [id])
+}
+
+model Inspection {
+  id                String   @id @default(cuid())
+  orderId           String?
+  productId         String?
+  inspectorId       String
+  result            String
+  notes             String?
+  evidencePathsJson String
+  createdAt         DateTime @default(now())
+
+  order     Order?           @relation(fields: [orderId], references: [id])
+  product   Product?         @relation(fields: [productId], references: [id])
+  inspector InspectorProfile @relation(fields: [inspectorId], references: [id])
+}
+
+model Shipment {
+  id               String    @id @default(cuid())
+  orderId          String
+  shipperId        String
+  supplierId       String
+  trackingNumber   String?
+  carrier          String?
+  status           String    @default("PENDING")
+  estimatedArrival DateTime?
+  deliveredAt      DateTime?
+  cost             Decimal?
+  currency         String    @default("AED")
+  createdAt        DateTime  @default(now())
+
+  order    Order           @relation(fields: [orderId], references: [id])
+  shipper  ShipperProfile  @relation(fields: [shipperId], references: [id])
+  supplier SupplierProfile @relation(fields: [supplierId], references: [id])
+}
+
+model Dispute {
+  id              String    @id @default(cuid())
+  orderId         String
+  openedByUserId  String
+  type            String
+  status          String    @default("OPEN")
+  resolution      String?
+  financialImpact Decimal?
+  createdAt       DateTime  @default(now())
+  resolvedAt      DateTime?
+
+  order    Order @relation(fields: [orderId], references: [id])
+  openedBy User  @relation("DisputeOpener", fields: [openedByUserId], references: [id])
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  userId      String
+  action      String
+  entityType  String
+  entityId    String
+  changesJson String?
+  ipAddress   String?
+  createdAt   DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id])
+  order   Order?  @relation(fields: [orderId], references: [id])
+  orderId String?
+}
