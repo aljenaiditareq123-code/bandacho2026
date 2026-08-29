@@ -6,9 +6,9 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
-  output: 'standalone',
+  serverExternalPackages: ['better-sqlite3', '@prisma/client', 'iron-session'],
   experimental: {
-    optimizePackageImports: ['lucide-react', '@prisma/client'],
+    optimizePackageImports: ['lucide-react'],
   },
   images: {
     remotePatterns: [
