@@ -7,6 +7,13 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   serverExternalPackages: ['better-sqlite3', '@prisma/client', 'iron-session'],
+  outputFileTracingIncludes: {
+    '/[locale]/track/[id]': ['./prisma/prisma/dev.db'],
+    '/[locale]/dashboard': ['./prisma/prisma/dev.db'],
+    '/[locale]/products': ['./prisma/prisma/dev.db'],
+    '/api/auth/login': ['./prisma/prisma/dev.db'],
+    '/api/auth/logout': ['./prisma/prisma/dev.db'],
+  },
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
